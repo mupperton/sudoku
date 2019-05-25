@@ -1,5 +1,10 @@
 import React from 'react'
+import Body from './body'
 
-const App = () => (<h1>Hello world</h1>)
+const App = () => (
+  <div>
+    <Body />
+  </div>
+)
 
 export default App

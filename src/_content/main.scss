@@ -1,0 +1,95 @@
+$grid-max: 554px;
+$grid-min: 554px;
+$grid-border: 1px solid darkgrey;
+$grid-border-thick: 2px solid black;
+
+body {
+  padding: 5px;
+}
+
+#app {
+  width: 900px;
+  margin: auto;
+}
+
+.app-grid {
+  display: flex;
+  flex-direction: column;
+  max-height: $grid-max;
+  min-height: $grid-min;
+  max-width: $grid-max;
+  min-width: $grid-min;
+}
+
+.app-row, .app-pencil-row {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.app-row {
+  border-top: $grid-border;
+
+  &:nth-child(1), &:nth-child(4), &:nth-child(7) {
+    border-top: $grid-border-thick;
+  }
+
+  &:nth-child(9) {
+    border-bottom: $grid-border-thick;
+  }
+}
+
+.app-cell, .app-pencil-cell {
+  flex: 1 1 auto;
+  height: auto;
+  text-align: center;
+
+  &:before {
+    content: '';
+    float: left;
+    padding-top: calc(100% - 1px);
+  }
+
+  .app-cell-value {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.user {
+      color: rgb(58, 58, 202);
+    }
+  }
+}
+
+.app-cell {
+  border-left: $grid-border;
+  padding: 1px;
+  font-size: 1.6em;
+
+  &:nth-child(1), &:nth-child(4), &:nth-child(7) {
+    border-left: $grid-border-thick;
+  }
+
+  &:nth-child(9) {
+    border-right: $grid-border-thick;
+  }
+
+  &:hover {
+    background-color: rgb(228, 228, 228);
+  }
+
+  &.selected {
+    background-color: lightskyblue;
+  }
+
+  &.selected:hover {
+    background-color: rgb(45, 109, 134);
+  }
+}
+
+.app-pencil-cell {
+  font-size: 0.8em;
+  text-align: center;
+}

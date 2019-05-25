@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const production = process.env.NODE_ENV === 'production'
 
@@ -13,6 +14,14 @@ module.exports = {
         exclude: /node_modules/,
         use: { loader: 'babel-loader' },
       },
+      {
+        test: /\.(scss|css)?$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
   plugins: [
@@ -21,5 +30,6 @@ module.exports = {
       filename: 'index.html',
       inject: 'body',
     }),
+    new MiniCssExtractPlugin(),
   ],
 }
