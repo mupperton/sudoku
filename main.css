@@ -1,0 +1,63 @@
+body {
+  padding: 5px; }
+
+#app {
+  width: 900px;
+  margin: auto; }
+
+.app-grid {
+  display: flex;
+  flex-direction: column;
+  max-height: 554px;
+  min-height: 554px;
+  max-width: 554px;
+  min-width: 554px; }
+
+.app-row, .app-pencil-row {
+  flex: auto;
+  display: flex;
+  flex-direction: row; }
+
+.app-row {
+  border-top: 1px solid darkgrey; }
+  .app-row:nth-child(1), .app-row:nth-child(4), .app-row:nth-child(7) {
+    border-top: 2px solid black; }
+  .app-row:nth-child(9) {
+    border-bottom: 2px solid black; }
+
+.app-cell, .app-pencil-cell {
+  flex: 1 1 auto;
+  height: auto;
+  text-align: center; }
+  .app-cell:before, .app-pencil-cell:before {
+    content: '';
+    float: left;
+    padding-top: calc(100% - 1px); }
+  .app-cell .app-cell-value, .app-pencil-cell .app-cell-value {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .app-cell .app-cell-value.user, .app-pencil-cell .app-cell-value.user {
+      color: #3a3aca; }
+
+.app-cell {
+  border-left: 1px solid darkgrey;
+  padding: 1px;
+  font-size: 1.6em; }
+  .app-cell:nth-child(1), .app-cell:nth-child(4), .app-cell:nth-child(7) {
+    border-left: 2px solid black; }
+  .app-cell:nth-child(9) {
+    border-right: 2px solid black; }
+  .app-cell:hover {
+    background-color: #e4e4e4; }
+  .app-cell.selected {
+    background-color: lightskyblue; }
+  .app-cell.selected:hover {
+    background-color: #2d6d86; }
+
+.app-pencil-cell {
+  font-size: 0.8em;
+  text-align: center; }
+
